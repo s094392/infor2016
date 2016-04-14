@@ -66,18 +66,18 @@
 						<form method="post" action="#">
 							<div class="row uniform">
 								<div class="6u 12u$(xsmall)">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="社團名稱" />
+									<input type="text" name="demo-name" id="name" value="" placeholder="社團名稱" />
 								</div>
 								<div class="6u$ 12u$(xsmall)">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="房位" />
+									<input type="email" name="demo-email" id="room" value="" placeholder="房位" />
 								</div>
 								<div class="12u$">
 									<div class="select-wrapper">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
+										<select name="demo-category" id="join">
+											<option value="-1">- Category -</option>
 											<option value="1">楓資茶會</option>
-											<option value="1">建資茶會</option>
-											<option value="1">楓資&&建資茶會</option>
+											<option value="2">建資茶會</option>
+											<option value="0">楓資&&建資茶會</option>
 										</select>
 									</div>
 								</div>
@@ -91,22 +91,22 @@
 								</div> -->
 								<div class="6u 12u$(small)">
 									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
+									<label for="demo-copy">Email me a copy</label><!--...?what's this-->
 								</div>
 								<div class="6u$ 12u$(small)">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
+									<input type="checkbox" id="human" name="demo-human">
 									<label for="demo-human">Not a robot</label>
 								</div>
 								<div class="12u$">
-									<textarea name="demo-message" id="demo-message" placeholder="參加名單" rows="6"></textarea>
+									<textarea name="demo-message" id="person" placeholder="參加名單" rows="6"></textarea>
 								</div>
 								<div class="12u$">
-									<textarea name="demo-message" id="demo-message" placeholder="備註" rows="6"></textarea>
+									<textarea name="demo-message" id="ps" placeholder="備註" rows="6"></textarea>
 								</div>
 								<div class="12u$">
 									<ul class="actions">
-										<li><input type="submit" value="Register" class="special" /></li>
-										<li><input type="reset" value="Reset" /></li>
+										<li><input type="button" value="Register" class="special" id="regist"/></li>
+										<li><input type="reset" value="Reset" id="reset"/></li>
 									</ul>
 								</div>
 							</div>
@@ -135,3 +135,53 @@
 
 	</body>
 </html>
+<script>
+	//var socket=io(/*link*/"http://localhost:1234");
+
+	window.addEventListener('load',function(){
+		document.getElementById('regist').addEventListener('click',function(){
+			var name=document.getElementById('name').value;
+			var room=document.getElementById('room').value;
+			var join=document.getElementById('join').value;
+			var human=document.getElementById('human').value;
+			var person=document.getElementById('person').value;
+			var ps=document.getElementById('ps').value;
+			
+			console.log(human);
+
+			if(human?){
+				?
+			}
+
+			if(join==="-1"){
+				join="NO";
+			}
+			else if(join==="1"){
+				join="ZSISC";
+			}
+			else if(join==="2"){
+				join="INFOR";
+			}
+			else if(join==="0"){
+				join="BOTH";
+			}
+			else{
+				join="there's a bug";
+			}
+			socket.emit("sendReg",name,room,join,person,post);
+		})
+		document.getElementById('reset').addEventListener('click',function(){
+			document.getElementById('name').value="";
+			document.getElementById('room').value="";
+			document.getElementById('join').value="-1";
+			document.getElementById('human').value="";//
+			document.getElementById('person').value="";
+			document.getElementById('ps').value="";
+		})
+	})
+</script>
+
+<!--
+	bugs: human checkbox
+
+-->
