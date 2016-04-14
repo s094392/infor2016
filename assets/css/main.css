@@ -14,7 +14,7 @@
 		border: 0;
 		font-size: 100%;
 		font: inherit;
-		font-family: Microsoft JhengHei;
+		font-family: Microsoft JhengHei,sans-serif;
 		vertical-align: baseline;
 	}
 
@@ -1722,10 +1722,10 @@
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, #2B2E4A, #2B2E4A);
+				background-image: -webkit-linear-gradient(to right, #2B2E4A, #2B2E4A);
+				background-image: -ms-linear-gradient(to right, #2B2E4A, #2B2E4A);
+				background-image: linear-gradient(to right, #2B2E4A, #2B2E4A);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3148,9 +3148,19 @@
 /* Table */
 
 	.table-wrapper {
+		padding: 6%;
 		-webkit-overflow-scrolling: touch;
+		background-color: #6F3381;
 		overflow-x: auto;
 	}
+
+	.table-wrapperjizz {
+		padding: 6%;
+		-webkit-overflow-scrolling: touch;
+		background-color: #592C63;
+		overflow-x: auto;
+	}
+
 
 	table {
 		margin: 0 0 2em 0;
@@ -3258,11 +3268,11 @@
 		}
 
 		.wrapper.style1-alt {
-			background-color: #493382;
+			background-color: #55428D;
 		}
 
 		.wrapper.style2 {
-			background-color: #5052b5;
+			background-color: #5e42a6;
 		}
 
 		.wrapper.style2-alt {
@@ -3270,11 +3280,11 @@
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background-color: #211E55;
 		}
 
 		.wrapper.style3-alt {
-			background-color: #953d75;
+			background-color: #55428D;
 		}
 
 		.wrapper.fullscreen {
@@ -3381,7 +3391,7 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #5e42a6;
+		background-color: #2B2E4A;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3535,7 +3545,7 @@
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #312450;
+		background: #2B2E4A;
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3885,7 +3895,8 @@
 
 	#intro {
 		background-attachment: fixed;
-		background-image: url("images/intro.svg");
+		background-color: #638499;
+		/*background-image: url("images/intro.svg");*/
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
@@ -3917,4 +3928,29 @@
 				background-attachment: scroll;
 			}
 
+		}
+
+		#firstcontent{
+			background-color: #504A99;
+		}
+
+		#secondcontent{
+			background-color: #5A3899;
+		}
+
+		#time{
+			background-color: #211E55;
+		}
+
+		#form{
+			padding: 9%;
+		}
+		.lightbox {
+		    display: none;
+		}
+		.about{
+			background-color: #638499;
+		}
+		.jizzfooter{
+			background-color: #2B2E4A;
 		}
