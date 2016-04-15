@@ -7,6 +7,7 @@ var io=require('socket.io')(server);
 
 
 app.set('port', (process.env.PORT || 5000));
+
 app.use('/assets',express.static(__dirname+'/assets'));
 
 app.get('/',function(req,res){
@@ -31,13 +32,18 @@ io.sockets.on('connection',function(socket){
 		})
 	})
 })*/
+
 //server.listen(5000);
+
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
 /*
 todo: person array
 
 
 
 */
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+
