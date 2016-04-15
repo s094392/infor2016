@@ -31,7 +31,7 @@ io.sockets.on('connection',function(socket){
 	})
 })
 
-server.listen(1234);
+server.listen(5000);
 
 /*
 todo: person array
