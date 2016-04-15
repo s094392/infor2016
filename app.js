@@ -33,6 +33,9 @@ io.sockets.on('connection',function(socket){
 			if(err){
 				throw err;
 			}
+            if(join=="there's a bug"){
+                console.log(join);
+            }
 			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps});
             socket.emit('done');
 		})

@@ -120,6 +120,8 @@
 			var room=document.getElementById('room').value;
 			var join=document.getElementById('join').value;
 			
+            var able=true;
+
             var person=[];
             for(i=0;i<appe.length-1;i++){
                 if(appe[i]!=undefined){
@@ -144,6 +146,9 @@
 			else{
 				join="there's a bug";
 			}
+
+            if(name==""||room==""||
+            
 			socket.emit("sendReg",name,room,join,person,ps);
 		})
 		document.getElementById('reset').addEventListener('click',function(){
