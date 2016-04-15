@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <!--
 	Hyperspace by HTML5 UP
 	html5up.net | @n33co
@@ -21,12 +20,13 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="/" class="title">Hyperspace</a>
+				<a href="/" class="title">建楓茶會</a>
 				<nav>
 					<ul>
-						<li><a href="/index">Home</a></li>
-						<li><a href="/about" class="active">About</a></li>
-						<li><a href="/registeration">Registeration</a></li>
+						<li><a href="/">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/registeration" class="active">Registeration</a></li>
+						<li><a href="/projects">Projects</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -55,25 +55,11 @@
 										</select>
 									</div>
 								</div>
-								<!-- <div class="4u 12u$(small)">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">不住宿</label>
-								</div>
-								<div class="4u 12u$(small)">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">住宿</label>
-								</div> -->
-								<div class="6u 12u$(small)">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label><!--...?what's this-->
-								</div>
-								<div class="6u$ 12u$(small)">
-									<input type="checkbox" id="human" name="demo-human">
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="12u$">
-									<textarea name="demo-message" id="person" placeholder="參加名單" rows="6"></textarea>
-								</div>
+                                <div class="row uniform">
+                                    <div class="personappend">
+                                    </div>
+                                </div>
+
 								<div class="12u$">
 									<textarea name="demo-message" id="ps" placeholder="備註" rows="6"></textarea>
 								</div>
@@ -93,39 +79,59 @@
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; INFOR. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/skel.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../assets/js/main.js"></script>
 	</body>
 </html>
+
+<script src="/socket.io/socket.io.js"></script>
+
 <script>
-	//var socket=io(/*link*/"http://localhost:1234");
+	var socket=io("http://localhost:80");
+    var cnt=0;
+    var appe=[];
+    $('.personappend').append('<div class="12u$"><input type="text" name="demo-message" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
+    appe.push(0);
+
+    setInterval(function(){
+        if(document.getElementById('person'+cnt).value!=""){
+            cnt++;
+            $('.personappend').append('<div class="12u$"><input type="text" name="demo-message" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
+            appe.push(cnt);
+        }
+        for(i=0;i<appe.length-1;i++){
+            if(appe[i]!=undefined&&document.getElementById('person'+appe[i]).value==""&&appe.length>1){
+                $('#person'+appe[i]).remove();
+                delete appe[i];
+            }
+        }
+    },50)
 
 	window.addEventListener('load',function(){
 		document.getElementById('regist').addEventListener('click',function(){
 			var name=document.getElementById('name').value;
 			var room=document.getElementById('room').value;
 			var join=document.getElementById('join').value;
-			var human=document.getElementById('human').value;
-			var person=document.getElementById('person').value;
-			var ps=document.getElementById('ps').value;
 			
-			console.log(human);
+            var person=[];
+            for(i=0;i<appe.length-1;i++){
+                if(appe[i]!=undefined){
+                    person.push(document.getElementById('person'+appe[i]).value);
+                }
+            }
 
-			if(human?){
-				?
-			}
+            var ps=document.getElementById('ps').value;
 
 			if(join==="-1"){
 				join="NO";
@@ -148,11 +154,22 @@
 			document.getElementById('name').value="";
 			document.getElementById('room').value="";
 			document.getElementById('join').value="-1";
-			document.getElementById('human').value="";//
-			document.getElementById('person').value="";
-			document.getElementById('ps').value="";
+			
+            for(i=0;i<appe.length-1;i++){
+                document.getElementById('person'+appe[i]).value="";
+            }/*
+            if press_reset
+                then get_ERROR
+            working
+            */
+            
+            document.getElementById('ps').value="";
 		})
 	})
+
+    socket.on('done',function(){
+        
+    }
 </script>
 
 <!--

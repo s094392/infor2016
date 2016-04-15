@@ -6,8 +6,6 @@ var server=require('http').Server(app);
 var io=require('socket.io')(server);
 
 
-app.set('port', (process.env.PORT || 5000));
-
 app.use('/assets',express.static(__dirname+'/assets'));
 app.use('/images',express.static(__dirname+'/images'));
 
@@ -20,26 +18,30 @@ app.get('/about',function(req,res){
 app.get('/registration',function(req,res){
 	res.sendFile(__dirname+'/pages/registration.html',function(){res.end();})
 })
+app.get('/registration2',function(req,res){
+	res.sendFile(__dirname+'/pages/registration2.html',function(){res.end();})
+})
+app.get('/projects',function(req,res){
+	res.sendFile(__dirname+'/pages/projects.html',function(){res.end();})
+})
 
-/*
+
+
 io.sockets.on('connection',function(socket){
 	socket.on('sendReg',function(name,room,join,person,ps){
 		mongo.connect('mongodb://localhost:27017/28final',function(err,db){
 			if(err){
 				throw err;
 			}
-			//person
-			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps})
+			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps});
+            socket.emit('done');
 		})
 	})
-})*/
+})
 
 //server.listen(5000);
+server.listen(80);
 
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
 
 /*
 todo: person array
