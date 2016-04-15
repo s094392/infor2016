@@ -9,6 +9,7 @@ var io=require('socket.io')(server);
 app.set('port', (process.env.PORT || 5000));
 
 app.use('/assets',express.static(__dirname+'/assets'));
+app.use('/images',express.static(__dirname+'/images'));
 
 app.get('/',function(req,res){
 	res.sendFile(__dirname+'/pages/index.html',function(){res.end();})
