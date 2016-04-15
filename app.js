@@ -18,11 +18,11 @@ app.get('/about',function(req,res){
 app.get('/registration',function(req,res){
 	res.sendFile(__dirname+'/pages/registration.html',function(){res.end();})
 })
-app.get('/registration2',function(req,res){
-	res.sendFile(__dirname+'/pages/registration2.html',function(){res.end();})
-})
 app.get('/projects',function(req,res){
 	res.sendFile(__dirname+'/pages/projects.html',function(){res.end();})
+})
+app.get('/good',function(req,res){
+	res.sendFile(__dirname+'/pages/good.html',function(){res.end();})
 })
 
 
