@@ -55,12 +55,8 @@
 										</select>
 									</div>
 								</div>
-                                <div class="row uniform">
-                                    <div class="personappend">
-                                    </div>
-                                </div>
 
-								<div class="12u$">
+								<div class="12u$ personappend">
 									<textarea name="demo-message" id="ps" placeholder="備註" rows="6"></textarea>
 								</div>
 								<div class="12u$">
@@ -98,21 +94,21 @@
 <script src="/socket.io/socket.io.js"></script>
 
 <script>
-	var socket=io("http://localhost:80");
+	var socket=io("http://210.71.78.200:80");
     var cnt=0;
     var appe=[];
-    $('.personappend').append('<div class="12u$"><input type="text" name="demo-message" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
+    $('.personappend').before('<div class="6u"><input type="text" name="demo-message" class="appendname" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
     appe.push(0);
 
     setInterval(function(){
         if(document.getElementById('person'+cnt).value!=""){
             cnt++;
-            $('.personappend').append('<div class="12u$"><input type="text" name="demo-message" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
+            $('.personappend').before('<div class="6u"><input type="text" name="demo-message" class="appendname" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
             appe.push(cnt);
         }
         for(i=0;i<appe.length-1;i++){
             if(appe[i]!=undefined&&document.getElementById('person'+appe[i]).value==""&&appe.length>1){
-                $('#person'+appe[i]).remove();
+                $('#person'+appe[i]).parent().remove();
                 delete appe[i];
             }
         }
@@ -148,7 +144,7 @@
 			else{
 				join="there's a bug";
 			}
-			socket.emit("sendReg",name,room,join,person,post);
+			socket.emit("sendReg",name,room,join,person,ps);
 		})
 		document.getElementById('reset').addEventListener('click',function(){
 			document.getElementById('name').value="";
@@ -169,7 +165,7 @@
 
     socket.on('done',function(){
         
-    }
+    })
 </script>
 
 <!--
