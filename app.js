@@ -24,7 +24,9 @@ app.get('/projects',function(req,res){
 app.get('/good',function(req,res){
 	res.sendFile(__dirname+'/pages/good.html',function(){res.end();})
 })
-
+app.get('/back',function(req,res){
+    res.sendFile(__dirname+'/pages/back.html',function(){res.end();})
+})
 
 
 io.sockets.on('connection',function(socket){
@@ -40,6 +42,28 @@ io.sockets.on('connection',function(socket){
             socket.emit('done');
 		})
 	})
+    socket.on('bkreq',function(pw){
+        if(pw==="1"){
+            mongo.connect('mongodb://localhost:27017/28final',function(err,db){
+                if(err){
+                    throw err;
+                }
+                db.collection('reg').find({},{_id:0},function(err,res){
+                    res.toArray(function(err,res){
+                        /*res=JSON.stringify(res);
+                        res=res.split("},{");
+                        res[0] = res[0].slice(2);
+                        res[res.length-1] = res[res.length-1].slice(0,res[res.length-1].length-2);
+                        for(i=0;i<res.length;i++){console.log(res[i]);}*/
+                        socket.emit('giveall',res);
+                    })
+                })
+            })
+        }
+        else{
+            socket.emit('loginfail');
+        }
+    })
 })
 
 //server.listen(5000);

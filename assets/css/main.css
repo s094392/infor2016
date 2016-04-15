@@ -2551,19 +2551,19 @@
 		}
 
 		.icon.major {
-			width: 2.5em;
-			height: 2.5em;
+			width: 3em;
+			height: 3em;
 			display: block;
 			background: #ffffff;
 			border-radius: 100%;
 			color: #312450;
 			text-align: center;
-			line-height: 2.5em;
-			margin: 0 0 1.3em 0;
+			line-height: 3em;
+			margin: 0 0 1.5em 0;
 		}
 
 			.icon.major:before {
-				font-size: 1.25em;
+				font-size: 1.5em;
 			}
 
 				.wrapper.style1 .icon.major:before {
@@ -2583,7 +2583,7 @@
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #b74e91;
+					color: #63beac;
 				}
 
 				.wrapper.style3-alt .icon.major:before {
@@ -3153,14 +3153,14 @@
 	.table-wrapper {
 		padding: 6%;
 		-webkit-overflow-scrolling: touch;
-		background-color: #6F3381;
+		background-color: #C5E7E3;
 		overflow-x: auto;
 	}
 
 	.table-wrapperjizz {
 		padding: 6%;
 		-webkit-overflow-scrolling: touch;
-		background-color: #592C63;
+		background-color: #E9F4F6;
 		overflow-x: auto;
 	}
 
@@ -3182,10 +3182,11 @@
 
 		table td {
 			padding: 0.75em 0.75em;
+            color: #7e9291; 
 		}
 
 		table th {
-			color: #ffffff;
+			color: #7e9291;
 			font-size: 1em;
 			font-weight: bold;
 			padding: 0 0.75em 0.75em 0.75em;
@@ -3263,7 +3264,7 @@
 			}
 
 		.wrapper.alt {
-			background-color: #261c3e;
+			background-color: #C5E7E3;
 		}
 
 		.wrapper.style1 {
@@ -3271,7 +3272,7 @@
 		}
 
 		.wrapper.style1-alt {
-			background-color: #55428D;
+			background-color: #C5E7E3;
 		}
 
 		.wrapper.style2 {
@@ -3283,7 +3284,8 @@
 		}
 
 		.wrapper.style3 {
-			background-color: rgba(198,232,236,1);
+			/*background-color: rgba(198,232,236,1);*/
+			background-color: #E9F4F6;
 		}
 
 		.wrapper.style3-alt {
@@ -3394,14 +3396,14 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #2B2E4A;
+		background-color: rgba(71,171,151,1);
 		cursor: default;
 		padding: 1.75em 2em;
 	}
 
 		#header > .title {
 			border: 0;
-			color: #ffffff;
+			color: #E9F4F6;
 			display: block;
 			font-size: 1.25em;
 			font-weight: bold;
@@ -3537,7 +3539,7 @@
 
 	#footer > .inner .menu {
 		font-size: 0.8em;
-		color: rgba(255, 255, 255, 0.15);
+		color: #63beac;
 	}
 
 	#header + #wrapper + #footer > .inner {
@@ -3953,5 +3955,21 @@
 		    display: none;
 		}
 		.jizzfooter{
-			background-color: #2B2E4A;
+			background-color: #C5E7E3;
 		}
+
+        .tablejizz > thead > tr > th{
+            color: #63beac;
+        }
+
+        .tablejizz > tbody > tr > td{
+            color: #63beac;
+        }
+        .projectspage{
+            background-color: #E9F4F6;
+        }
+        .learnmore{
+            text-align: center;
+        }
+
+        
