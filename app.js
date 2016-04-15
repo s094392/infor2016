@@ -30,9 +30,8 @@ io.sockets.on('connection',function(socket){
 		})
 	})
 })
-
-server.listen(5000);
-
+//server.listen(5000);
+app.set('port', (process.env.PORT || 5000));
 /*
 todo: person array
 
