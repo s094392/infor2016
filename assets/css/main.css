@@ -1697,6 +1697,7 @@
 
 	p {
 		margin: 0 0 2em 0;
+		color: #7e9291;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -1711,8 +1712,10 @@
 			text-decoration: none;
 		}
 
+
 	h1 {
 		font-size: 2.75em;
+		color: #63beac;
 	}
 
 		h1.major {
@@ -3545,7 +3548,7 @@
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #2B2E4A;
+		background: #63beac;
 		cursor: default;
 		height: 100vh;
 		left: 0;
@@ -3895,7 +3898,7 @@
 
 	#intro {
 		background-attachment: fixed;
-		background-color: #638499;
+		background-color: #ddf1ef;
 		/*background-image: url("images/intro.svg");*/
 		background-position: top right;
 		background-repeat: no-repeat;
@@ -3924,6 +3927,7 @@
 
 		@media screen and (max-width: 1280px) {
 
+		color: #63beac;
 			#intro {
 				background-attachment: scroll;
 			}
