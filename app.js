@@ -18,7 +18,7 @@ app.get('/registration',function(req,res){
 	res.sendFile(__dirname+'/pages/registration.html',function(){res.end();})
 })
 
-
+/*
 io.sockets.on('connection',function(socket){
 	socket.on('sendReg',function(name,room,join,person,ps){
 		mongo.connect('mongodb://localhost:27017/28final',function(err,db){
@@ -29,7 +29,7 @@ io.sockets.on('connection',function(socket){
 			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps})
 		})
 	})
-})
+})*/
 //server.listen(5000);
 app.set('port', (process.env.PORT || 5000));
 /*
