@@ -1623,7 +1623,7 @@
 	}
 
 	body {
-		background: #312450;
+        background-color: #E9F4F6;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1726,9 +1726,9 @@
 
 			h1.major:after {
 				background-image: -moz-linear-gradient(to right, #2B2E4A, #2B2E4A);
-				background-image: -webkit-linear-gradient(to right, #2B2E4A, #2B2E4A);
-				background-image: -ms-linear-gradient(to right, #2B2E4A, #2B2E4A);
-				background-image: linear-gradient(to right, #2B2E4A, #2B2E4A);
+				background-image: -webkit-linear-gradient(to right, #63beac, #63beac);
+				background-image: -ms-linear-gradient(to right, #63beac, #63beac);
+				background-image: linear-gradient(to right, #63beac, #63beac);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -1881,7 +1881,6 @@
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
-	button,
 	.button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -3787,14 +3786,14 @@
 			}
 
 			#sidebar nav a:before {
-				background: #2D6D4B;
+				background: rgba(255, 255, 255, 0.20);
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #2D6D4B, #A8D8B9);
-				background-image: -webkit-linear-gradient(to right, #2D6D4B, #A8D8B9);
-				background-image: -ms-linear-gradient(to right, #2D6D4B, #A8D8B9);
-				background-image: linear-gradient(to right, #2D6D4B, #A8D8B9);
+				background-image: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.70));
+				background-image: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.70));
+				background-image: -ms-linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.70));
+				background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.70));
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3971,5 +3970,32 @@
         .learnmore{
             text-align: center;
         }
-
         
+        #pw{
+            border: solid 3px #63beac;
+            color: #63beac;
+            background-color: white
+        }
+        .hui{
+            color: #7e9291;
+        }
+
+        #sweetalertbtn{
+             height: calc(4.75em + 2px); 
+             letter-spacing: 0; 
+             line-height: 0; 
+             color: white !important;
+             border: none;
+        } 
+        #_data{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+         #_data2{
+             height: 100%;
+             width: 100%;
+             overflow: auto;
+             padding-right: 20px;
+         }
