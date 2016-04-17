@@ -101,9 +101,9 @@ $ sudo back /
             socket.on('giveall',function(res){
                 $('#password').remove();
                 var tot=0;
-                $('#tb').append('<tr><td>社團</td><td>房數</td><td>參加</td><td>名單</td><td>備註</td></tr>');
+                $('#tb').append('<tr><td>社團</td><td>房數</td><td>參加</td><td>名單</td><td>備註</td><td>夜遊</td></tr>');
                 for(i=0;i<res.length;i++){
-                    $('#tb').append('<tr><td>'+res[i].name+'</td><td>'+res[i].room+'</td><td>'+res[i].join+'</td><td><a href="#" data-featherlight="#personname'+i+'">顯示</a><div class="lightbox hui" id="personname'+i+'">'+res[i].person+'</div></td><td>'+res[i].ps+'</td></tr>');
+                    $('#tb').append('<tr><td>'+res[i].name+'</td><td>'+res[i].room+'</td><td>'+res[i].join+'</td><td><a href="#" data-featherlight="#personname'+i+'">顯示</a><div class="lightbox hui" id="personname'+i+'">'+res[i].person+'</div></td><td>'+res[i].ps+'</td><td>'+res[i].night+'</td></tr>');
                     tot+=res[i].person.length;
                 }
                 $('#tot').append('total : '+tot+' person');
