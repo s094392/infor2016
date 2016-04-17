@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/default.css">
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
@@ -35,8 +37,8 @@
 			<div id="wrapper">
 
 				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
+					<section id="intro" class="wrapper style1 fullscreen fade-up htmleaf-container">
+						<div class="inner" style="position: absolute;">
 							<h1>建楓茶會</h1>
 							<p>2016/5/28（六）中山女中資訊研習社<br>2016/5/29（日）INFOR</p>
 							<ul class="actions">
@@ -153,7 +155,7 @@
 								<tfoot>
 									<tr>
 										<td colspan="2"></td>
-										
+
 									</tr>
 								</tfoot>
 							</table>
@@ -171,68 +173,68 @@
 									<tr>
 										<td>10:00~10:30</td>
 										<td>進場&amp;公關時間</td>
-										
+
 									</tr>
 									<tr>
 										<td>10:30~11:40</td>
 										<td>NFOR29th幹部介紹&amp;各社派代表贈禮</td>
-									
+
 									</tr>
 									<tr>
 										<td>11:40~11:45</td>
 										<td> 開場&amp;影片</td>
-										
+
 									</tr>
 									<tr>
 										<td>11:45~12:15</td>
 										<td>成發第1~2組</td>
-										
+
 									</tr>
 									<tr>
 										<td>12:15~13:25</td>
 										<td>午餐&amp;成發試用</td>
-										
+
 									</tr>
 									<tr>
 										<td>13:25~14:10</td>
 										<td>成發第3~5組</td>
-										
+
 									</tr>
 									<tr>
 										<td>14:10~14:40</td>
 										<td>小活動</td>
-										
+
 									</tr>
 									<tr>
 										<td>14:40~15:30</td>
 										<td>成發第5~8組</td>
-										
+
 									</tr>
 									<tr>
 										<td>15:30~15:45</td>
 										<td>INFOR29th影片</td>
-										
+
 									</tr>
 									<tr>
 										<td>15:45~16:00</td>
 										<td>INFOR28th影片</td>
-										
+
 									</tr>
 									<tr>
 										<td>16:00~17:00</td>
 										<td>幹部交接</td>
-										
+
 									</tr>
 									<tr>
 										<td>17:00~</td>
 										<td>送別&amp;善後</td>
-										
+
 									</tr>
 								</tbody>
 								<tfoot>
 									<tr>
 										<td colspan="2"></td>
-										
+
 									</tr>
 								</tfoot>
 							</table>
@@ -256,8 +258,16 @@
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/jparticle.jquery.min.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
+			<script>
+			$(function(){
+				$(".htmleaf-container").jParticle({
+					background: "#E9F4F6",
+					color: "#E6E6E6"
+				});
+			});
+	</script>
 	</body>
 </html>
