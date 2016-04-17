@@ -3327,7 +3327,6 @@
 
 				.wrapper.fullscreen {
 					padding: 2em 0;
-					min-height: 0;
 				}
 
 					body.is-ie .wrapper.fullscreen {
@@ -4045,4 +4044,8 @@
                 letter-spacing: 0.20em;
                 text-transform: uppercase;
             }
+        }
+
+        canvas{
+            opacity: 0.1;
         }
