@@ -1,0 +1,10 @@
+
+#header > nav > ul > li a {
+    border: 0;
+    color: rgba(255, 255, 255, 0.35);
+    display: inline-block;
+    font-size: 0.6em;
+    font-weight: bold;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+}

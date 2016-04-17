@@ -67,13 +67,13 @@ io.sockets.on('connection',function(socket){
 })
 
 //server.listen(5000);
-server.listen(80);
+server.listen(8080);
 
 
 /*
 todo: person array
 
-
+jizz
 
 */
 

@@ -5,7 +5,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Hyperspace by HTML5 UP</title>
+		<title>建楓茶會</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -25,7 +25,6 @@
 				<a href="/" class="title">建楓茶會</a>
 				<nav>
 					<ul>
-						<li><a href="/">Home</a></li>
 						<li><a href="/about">About</a></li>
 						<li><a href="/registeration" class="active">Registeration</a></li>
 						<li><a href="/projects">Projects</a></li>
@@ -37,39 +36,41 @@
 			<div id="wrapper">
 
 				<!-- Main -->
-					<section id="form">
-						<h2>Form</h2>
-						<form method="post" action="#">
-							<div class="row uniform">
-								<div class="6u 12u$(xsmall)">
-									<input type="text" name="demo-name" id="name" value="" placeholder="社團名稱" />
-								</div>
-								<div class="6u$ 12u$(xsmall)">
-									<input type="email" name="demo-email" id="room" value="" placeholder="房位" />
-								</div>
-								<div class="12u$">
-									<div class="select-wrapper">
-										<select name="demo-category" id="join">
-											<option value="-1">- Category -</option>
-											<option value="1">楓資茶會</option>
-											<option value="2">建資茶會</option>
-											<option value="0">楓資&&建資茶會</option>
-										</select>
-									</div>
-								</div>
+                <section id="main" class="wrapper">
+                    <div class="inner">
+                    <h1>報名</h1>
+                    <form method="post" action="#">
+                        <div class="row uniform">
+                            <div class="6u 12u$(xsmall)">
+                                <input type="text" name="demo-name" class="plac" id="name" value="" placeholder="社團名稱" />
+                            </div>
+                            <div class="6u$ 12u$(xsmall)">
+                                <input type="email" name="demo-email" class="plac" id="room" value="" placeholder="房位" />
+                            </div>
+                            <div class="12u$">
+                                <div class="select-wrapper">
+                                    <select name="demo-category" id="join">
+                                        <option value="-1">參加</option>
+                                        <option value="1">楓資茶會</option>
+                                        <option value="2">建資茶會</option>
+                                        <option value="0">楓資&amp;&amp;建資茶會</option>
+                                    </select>
+                                </div>
+                            </div>
 
-								<div class="12u$ personappend">
-									<textarea name="demo-message" id="ps" placeholder="備註" rows="6"></textarea>
-								</div>
-								<div class="12u$">
-									<ul class="actions">
-										<li><input type="button" value="Register" class="special" id="regist"/></li>
-										<li><input type="reset" value="Reset" id="reset"/></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
+                            <div class="12u$ personappend">
+                                <textarea name="demo-message" class="plac" id="ps" placeholder="備註" rows="6"></textarea>
+                            </div>
+                            <div class="12u$">
+                                <ul class="actions">
+                                    <li><input type="button" value="Register" class="special" id="regist"/></li>
+                                    <li><input type="reset" value="Reset" id="reset"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </section>
 
 			</div>
 
@@ -77,7 +78,7 @@
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; INFOR. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; <a href="http://infor.org/">INFOR</a>. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>
@@ -177,8 +178,9 @@
 	})
 
     socket.on('done',function(){
-        window.location='http://210.71.78.200/good';
-    })
+       swal({   title: "success",  type: "success",   confirmButtonColor: "#8CD4F5",   confirmButtonText: "Back to Home",   closeOnConfirm: false }, function(){   window.location.href = "/" });
+
+})
 </script>
 
 <!--

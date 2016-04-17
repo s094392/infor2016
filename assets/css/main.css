@@ -2347,8 +2347,8 @@
 		background: rgba(255, 255, 255, 0.05);
 		border-radius: 0.25em;
 		border: none;
-		border: solid 1px rgba(255, 255, 255, 0.15);
-		color: inherit;
+		border: solid 2px #63beac;
+		color: #63beac;
 		display: block;
 		outline: 0;
 		padding: 0 1em;
@@ -2409,8 +2409,8 @@
 		}
 
 	select option {
-		background-color: #312450;
-		color: #ffffff;
+		background-color: #C5E7E3;
+		color: #63beac;
 	}
 
 	input[type="text"],
@@ -3432,15 +3432,6 @@
 						margin-left: 0;
 					}
 
-					#header > nav > ul > li a {
-						border: 0;
-						color: rgba(255, 255, 255, 0.35);
-						display: inline-block;
-						font-size: 0.6em;
-						font-weight: bold;
-						letter-spacing: 0.25em;
-						text-transform: uppercase;
-					}
 
 						#header > nav > ul > li a:hover {
 							color: rgba(255, 255, 255, 0.55);
@@ -3993,9 +3984,65 @@
             overflow: hidden;
         }
 
-         #_data2{
-             height: 100%;
-             width: 100%;
-             overflow: auto;
-             padding-right: 20px;
-         }
+        #_data2{
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            padding-right: 20px;
+            text-align: center;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #63beac !important;
+        }
+         
+        input:-moz-placeholder { /* Firefox 18- */
+            color: #63beac !important;  
+        }
+          
+        input::-moz-placeholder {  /* Firefox 19+ */
+            color: #63beac !important;  
+        }
+           
+        input:-ms-input-placeholder {  
+            color: #63beac !important;  
+        }
+        textarea::-webkit-input-placeholder {
+            color: #63beac !important;
+        }
+         
+        textarea:-moz-placeholder { /* Firefox 18- */
+            color: #63beac !important;  
+        }
+          
+        textarea::-moz-placeholder {  /* Firefox 19+ */
+            color: #63beac !important;  
+        }
+           
+        textarea:-ms-input-placeholder {  
+            color: #63beac !important;  
+        }
+
+        @media screen and (min-width: 480px) {
+            #header > nav > ul > li a {
+                border: 0;
+                color: rgba(255, 255, 255, 0.35);
+                display: inline-block;
+                font-size: 0.6em;
+                font-weight: bold;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            #header > nav > ul > li a {
+                border: 0;
+                color: rgba(255, 255, 255, 0.35);
+                display: inline-block;
+                font-size: 0.6em;
+                font-weight: bold;
+                letter-spacing: 0.20em;
+                text-transform: uppercase;
+            }
+        }
