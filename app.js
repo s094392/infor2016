@@ -30,7 +30,7 @@ app.get('/back',function(req,res){
 
 
 io.sockets.on('connection',function(socket){
-	socket.on('sendReg',function(name,room,join,person,ps){
+	socket.on('sendReg',function(name,room,join,person,ps,night){
 		mongo.connect('mongodb://localhost:27017/28final',function(err,db){
 			if(err){
 				throw err;
@@ -38,8 +38,10 @@ io.sockets.on('connection',function(socket){
             if(join=="there's a bug"){
                 console.log(join);
             }
-			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps});
-            socket.emit('done');
+            else{
+    			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps,night:night});
+                socket.emit('done');
+            }
 		})
 	})
     socket.on('bkreq',function(pw){

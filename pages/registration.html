@@ -47,7 +47,7 @@
                             <div class="6u$ 12u$(xsmall)">
                                 <input type="email" name="demo-email" class="plac" id="room" value="" placeholder="房位" />
                             </div>
-                            <div class="12u$">
+                            <div class="6u">
                                 <div class="select-wrapper">
                                     <select name="demo-category" id="join">
                                         <option value="-1">參加</option>
@@ -56,6 +56,11 @@
                                         <option value="0">楓資&amp;&amp;建資茶會</option>
                                     </select>
                                 </div>
+                            </div>
+
+                            <div class="6u$">
+                                <input type="checkbox" id="night" name="night">
+                                <label for="night">JIZZ</label>
                             </div>
 
                             <div class="12u$ personappend">
@@ -133,6 +138,7 @@
             }
 
             var ps=document.getElementById('ps').value;
+            var night=document.getElementById('night').value;
 
 			if(join==="-1"){
 				join="NO";
@@ -154,7 +160,7 @@
             	able=false;
             }
 			if(able){
-				socket.emit("sendReg",name,room,join,person,ps);
+				socket.emit("sendReg",name,room,join,person,ps,night);
 			}
 			else{
 				sweetAlert("Oops...","看起來有空格","error");
@@ -174,6 +180,7 @@
             */
 
             document.getElementById('ps').value="";
+            document.getElementById('night').value="";
 		})
 	})
 
