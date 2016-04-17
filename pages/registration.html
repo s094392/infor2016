@@ -47,7 +47,7 @@
                             <div class="6u$ 12u$(xsmall)">
                                 <input type="email" name="demo-email" class="plac" id="room" value="" placeholder="房位" />
                             </div>
-                            <div class="6u">
+                            <div class="6u$ 12u$(xsmall)">
                                 <div class="select-wrapper">
                                     <select name="demo-category" id="join">
                                         <option value="-1">參加</option>
@@ -58,9 +58,9 @@
                                 </div>
                             </div>
 
-                            <div class="6u$">
+                            <div class="6u$ 12u$(xsmall)">
                                 <input type="checkbox" id="night" name="night">
-                                <label for="night">JIZZ</label>
+                                <label for="night">參加夜遊（士林夜市）</label>
                             </div>
 
                             <div class="12u$ personappend">
@@ -102,7 +102,7 @@
 <script src="/socket.io/socket.io.js"></script>
 
 <script>
-	var socket=io("http://210.71.78.200:80");
+	var socket=io("http://210.71.78.200:8080");
     var cnt=0;
     var appe=[];
     $('.personappend').before('<div class="6u"><input type="text" name="demo-message" class="appendname" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
