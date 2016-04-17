@@ -11,8 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/default.css">
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
@@ -38,7 +36,7 @@
 
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up htmleaf-container">
-						<div class="inner" style="position: absolute;">
+						<div class="inner" style="position: absolute; top: 50%; margin-top: -201.7px;">
 							<h1>建楓茶會</h1>
 							<p>2016/5/28（六）中山女中資訊研習社<br>2016/5/29（日）INFOR</p>
 							<ul class="actions">
@@ -264,8 +262,9 @@
 			<script>
 			$(function(){
 				$(".htmleaf-container").jParticle({
-					background: "#E9F4F6",
-					color: "#E6E6E6"
+                    particlesNumber: (window.innerWidth/1530)*100,
+					background: "#C5E7E3",
+					color: "(92, 102, 107, 0.8)"
 				});
 			});
 	</script>
