@@ -1,7 +1,4 @@
 INFOR2016 presentation official site!
-===================
-----------
-
 
 ## Running ##
 Make sure you have [Node.js](http://nodejs.org/) and the [MongoDB](https://www.mongodb.org/) installed.
