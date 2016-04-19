@@ -1,7 +1,7 @@
-INFOR2016 presentation official site!
-===================
-----------
+#INFOR2016 presentation official site!#
 
+INFOR x ZSISC
+Runging on [zsisc.infor.org](zsisc.infor.org)
 
 ## Running ##
 Make sure you have [Node.js](http://nodejs.org/) and the [MongoDB](https://www.mongodb.org/) installed.
@@ -17,7 +17,6 @@ The MongoDB connection:
 //app.js: line 49
 mongo.connect('mongodb://localhost:27017/28final',function(err,db)
 ```
-----------
 
 ##Note##
 The page to view the responses is `localhost/back`, which require  password to access.
@@ -27,7 +26,6 @@ Setting up the password in:
 if(pw==="password")
 ```
 
-----------
 ###Packages used:###
 [HTML5UP](http://html5up.net/)
 [sweetalert](http://t4t5.github.io/sweetalert/)
