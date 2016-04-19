@@ -18,19 +18,16 @@ app.get('/about',function(req,res){
 app.get('/registration',function(req,res){
 	res.sendFile(__dirname+'/pages/registration.html',function(){res.end();})
 })
-app.get('/projects',function(req,res){
+/*app.get('/projects',function(req,res){
 	res.sendFile(__dirname+'/pages/projects.html',function(){res.end();})
-})
-app.get('/good',function(req,res){
-	res.sendFile(__dirname+'/pages/good.html',function(){res.end();})
-})
+})*/
 app.get('/back',function(req,res){
     res.sendFile(__dirname+'/pages/back.html',function(){res.end();})
 })
 
 
 io.sockets.on('connection',function(socket){
-	socket.on('sendReg',function(name,room,join,person,ps,night){
+	socket.on('sendReg',function(name,room,join,person,ps,night,locate){
 		mongo.connect('mongodb://localhost:27017/28final',function(err,db){
 			if(err){
 				throw err;
@@ -39,7 +36,7 @@ io.sockets.on('connection',function(socket){
                 console.log(join);
             }
             else{
-    			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps,night:night});
+    			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps,night:night,locate:locate});
                 socket.emit('done');
             }
 		})

@@ -4026,7 +4026,7 @@
                 border: 0;
                 color: rgba(255, 255, 255, 0.35);
                 display: inline-block;
-                font-size: 0.6em;
+                font-size: 0.8em;
                 font-weight: bold;
                 letter-spacing: 0.25em;
                 text-transform: uppercase;
@@ -4047,4 +4047,12 @@
 
         canvas{
             opacity: 0.1;
+        }
+        .innerjizz{
+            position: absolute;
+            top: 50%;
+            margin-top: -201.7px;
+        }
+        .tablecenter{
+            text-align: center;
         }

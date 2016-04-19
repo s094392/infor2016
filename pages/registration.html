@@ -26,8 +26,7 @@
 				<nav>
 					<ul>
 						<li><a href="/about">About</a></li>
-						<li><a href="/registeration" class="active">Registeration</a></li>
-						<li><a href="/projects">Projects</a></li>
+						<li><a href="/registration" class="active">Registration</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -45,15 +44,25 @@
                                 <input type="text" name="demo-name" class="plac" id="name" value="" placeholder="社團名稱" />
                             </div>
                             <div class="6u$ 12u$(xsmall)">
-                                <input type="email" name="demo-email" class="plac" id="room" value="" placeholder="房位" />
+                                <input type="email" name="demo-email" class="plac" id="room" value="" placeholder="住宿人數" />
                             </div>
-                            <div class="6u$ 12u$(xsmall)">
+                            <div class="6u 12u$(xsmall)">
                                 <div class="select-wrapper">
                                     <select name="demo-category" id="join">
                                         <option value="-1">參加</option>
+                                        <option value="0">楓資&amp;&amp;建資茶會</option>
                                         <option value="1">楓資茶會</option>
                                         <option value="2">建資茶會</option>
-                                        <option value="0">楓資&amp;&amp;建資茶會</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="6u$ 12u$(xsmall)">
+                                <div class="select-wrapper">
+                                    <select name="demo-category" id="locate">
+                                        <option value="-1">集合地點</option>
+                                        <option value="0">我家</option>
+                                        <option value="1">台北車站(5/28)</option>
+                                        <option value="2">廚餘桶前面</option>
                                     </select>
                                 </div>
                             </div>
@@ -105,13 +114,13 @@
 	var socket=io("http://210.71.78.200:8080");
     var cnt=0;
     var appe=[];
-    $('.personappend').before('<div class="6u"><input type="text" name="demo-message" class="appendname" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
+    $('.personappend').before('<div class="6u 12u$(xsmall)"><input type="text" name="demo-message" class="appendname" id="person'+cnt+'" placeholder="姓名（中山有入校限制）" rows="1"></input></div>');
     appe.push(0);
 
     setInterval(function(){
         if(document.getElementById('person'+cnt).value!=""){
             cnt++;
-            $('.personappend').before('<div class="6u"><input type="text" name="demo-message" class="appendname" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
+            $('.personappend').before('<div class="6u 12u$(xsmall)"><input type="text" name="demo-message" class="appendname" id="person'+cnt+'" placeholder="姓名" rows="1"></input></div>');
             appe.push(cnt);
         }
         for(i=0;i<appe.length-1;i++){
@@ -127,6 +136,7 @@
 			var name=document.getElementById('name').value;
 			var room=document.getElementById('room').value;
 			var join=document.getElementById('join').value;
+			var locate=document.getElementById('locate').value;
 
             var able=true;
 
@@ -155,12 +165,27 @@
 			else{
 				join="there's a bug";
 			}
+            if(locate==="-1"){
+				locate="NO";
+			}
+			else if(locate==="1"){
+				locate="Taipei main station";
+			}
+			else if(locate==="2"){
+				locate="jizz";
+			}
+			else if(locate==="0"){
+				locate="Myhome";
+			}
+			else{
+				locate="there's a bug";
+			}
 
             if(name==""||room==""||join=="NO"||person.length==0){
             	able=false;
             }
 			if(able){
-				socket.emit("sendReg",name,room,join,person,ps,night);
+				socket.emit("sendReg", name, room, join, person, ps, night, locate);
 			}
 			else{
 				sweetAlert("Oops...","看起來有空格","error");
@@ -170,6 +195,7 @@
 			document.getElementById('name').value="";
 			document.getElementById('room').value="";
 			document.getElementById('join').value="-1";
+			document.getElementById('locate').value="-1";
 
             for(i=0;i<appe.length-1;i++){
                 document.getElementById('person'+appe[i]).value="";
