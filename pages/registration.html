@@ -5,11 +5,12 @@
 -->
 <html>
 	<head>
-		<title>建楓茶會</title>
+		<title>ZSISC x INFOR</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+	   	<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="Shortcut Icon" type="image/x-icon" href="images/favicon.ico"/>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<link href="https://cdn.rawgit.com/noelboss/featherlight/1.4.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
@@ -22,7 +23,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="/" class="title">建楓茶會</a>
+				<a href="/" class="title">ZSISC x INFOR</a>
 				<nav>
 					<ul>
 						<li><a href="/about">About</a></li>
@@ -60,9 +61,12 @@
                                 <div class="select-wrapper">
                                     <select name="demo-category" id="locate">
                                         <option value="-1">集合地點</option>
-                                        <option value="0">我家</option>
-                                        <option value="1">台北車站(5/28)</option>
-                                        <option value="2">廚餘桶前面</option>
+                                        <option value="0">台北車站(5/28 12:30)</option>
+                                        <option value="1">捷運松江南京四號出口(5/28 12:35)</option>
+                                        <option value="2">中山女高校門口(5/28 13:45)</option>
+                                        <option value="3">台北車站南二門(5/29 9:10)</option>
+                                        <option value="4">捷運中正紀念堂站二號出口(5/29 9:20)</option>
+                                        <option value="5">建國中學校門口(5/29 9:30)</option>
                                     </select>
                                 </div>
                             </div>
@@ -169,13 +173,22 @@
 				locate="NO";
 			}
 			else if(locate==="1"){
-				locate="Taipei main station";
+				locate="Taipei main station 5/28";
 			}
 			else if(locate==="2"){
-				locate="jizz";
+				locate="MRT 5/28";
 			}
 			else if(locate==="0"){
-				locate="Myhome";
+				locate="School 5/28";
+			}
+			else if(locate==="3"){
+				locate="Taipeiain station 5/29";
+			}
+			else if(locate==="4"){
+				locate="MRT 5/29";
+			}
+			else if(locate==="5"){
+				locate="School 5/29";
 			}
 			else{
 				locate="there's a bug";

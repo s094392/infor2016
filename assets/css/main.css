@@ -4056,3 +4056,11 @@
         .tablecenter{
             text-align: center;
         }
+        .icon.abouticon{
+            height: 2em;
+            width: 2em;
+            color: #7e9291;
+            line-height: 2em;
+            display: inline-block;
+            font-size: 0.8em;
+        }
