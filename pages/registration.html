@@ -115,7 +115,7 @@
 <script src="/socket.io/socket.io.js"></script>
 
 <script>
-	var socket=io("http://210.71.78.200:8080");
+	var socket=io();
     var cnt=0;
     var appe=[];
     $('.personappend').before('<div class="6u 12u$(xsmall)"><input type="text" name="demo-message" class="appendname" id="person'+cnt+'" placeholder="姓名（中山有入校限制）" rows="1"></input></div>');
@@ -225,8 +225,10 @@
 
     socket.on('done',function(){
        swal({   title: "success",  type: "success",   confirmButtonColor: "#8CD4F5",   confirmButtonText: "Back to Home",   closeOnConfirm: false }, function(){   window.location.href = "/" });
-
-})
+    })
+    socket.on('regfailed',function(){
+        sweetAlert("Oops...","Something went wrong!","error");
+    })
 </script>
 
 <!--

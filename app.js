@@ -32,8 +32,9 @@ io.sockets.on('connection',function(socket){
 			if(err){
 				throw err;
 			}
-            if(join=="there's a bug"){
-                console.log(join);
+            var roomn=parseInt(room);
+            if(join=="there's a bug"||roomn==0||roomn==null){
+                socket.emit('regfailed');
             }
             else{
     			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps,night:night,locate:locate});

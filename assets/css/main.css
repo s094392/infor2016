@@ -1978,8 +1978,7 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #ffffff;
-			color: #312450 !important;
+			color: #63beac !important;
 		}
 
 			input[type="submit"].special:after,
@@ -2505,26 +2504,31 @@
 
 	::-webkit-input-placeholder {
 		color: rgba(255, 255, 255, 0.35) !important;
+		font-family: Microsoft JhengHei,sans-serif;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
 		color: rgba(255, 255, 255, 0.35) !important;
+		font-family: Microsoft JhengHei,sans-serif;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
 		color: rgba(255, 255, 255, 0.35) !important;
+		font-family: Microsoft JhengHei,sans-serif;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
 		color: rgba(255, 255, 255, 0.35) !important;
+		font-family: Microsoft JhengHei,sans-serif;
 		opacity: 1.0;
 	}
 
 	.formerize-placeholder {
 		color: rgba(255, 255, 255, 0.35) !important;
+		font-family: Microsoft JhengHei,sans-serif;
 		opacity: 1.0;
 	}
 
