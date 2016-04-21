@@ -3324,6 +3324,7 @@
 			-ms-justify-content: center;
 			justify-content: center;
 			min-height: 100vh;
+            max-height: 100vh;
 		}
 
 			body.is-ie .wrapper.fullscreen {
