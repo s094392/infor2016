@@ -3293,10 +3293,6 @@
 			background-color: #C5E7E3;
 		}
 
-		.wrapper.style2 {
-			background-color: #5e42a6;
-		}
-
 		.wrapper.style2-alt {
 			background-color: #3e4094;
 		}
@@ -3324,7 +3320,7 @@
 			-ms-justify-content: center;
 			justify-content: center;
 			min-height: 100vh;
-            max-height: 100vh;
+            		max-height: 100vh;
 		}
 
 			body.is-ie .wrapper.fullscreen {
@@ -3967,7 +3963,7 @@
 			background-color: #C5E7E3;
 		}
 
-        .tablejizz > thead > tr > th{
+        .tablejizz > thead > tr > td{
             color: #63beac;
         }
 
@@ -4085,3 +4081,10 @@
             display: inline-block;
             font-size: 0.8em;
         }
+	.jizzheight{
+	    min-height: 100vh;
+	    max-height: 100vh;
+	}
+    .hjizz{
+        color: #7e9291;
+    }

@@ -135,6 +135,11 @@
         }
     },50)
 
+    $(document).keydown(function (e) {
+       if (e.which == 8 && !(e.target.type == "text" || e.target.type == "textarea")) 
+           e.preventDefault();
+    });
+
 	window.addEventListener('load',function(){
 		document.getElementById('regist').addEventListener('click',function(){
 			var name=document.getElementById('name').value;

@@ -43,7 +43,7 @@ io.sockets.on('connection',function(socket){
 		})
 	})
     socket.on('bkreq',function(pw){
-        if(pw==="1"){
+        if(pw==="zsisc7122infor"){
             mongo.connect('mongodb://localhost:27017/28final',function(err,db){
                 if(err){
                     throw err;

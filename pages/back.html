@@ -90,13 +90,17 @@ $ sudo back /
 			<script src="assets/js/main.js"></script>
         <script>
             var socket=io();
-
-            window.addEventListener('load',function(){
-                document.getElementById('sm').addEventListener('click',function(){
-                    var pw=document.getElementById('pw').value;
-                    socket.emit('bkreq',pw);
-                })
-            })
+            $('#pw').keypress(function(e){
+                var key = e.which;
+                if(key == 13){  // the enter key code
+                    $('#sm').click();
+                    return false;  
+                }
+            });
+            $('#sm').click(function(){
+                var pw=document.getElementById('pw').value;
+                socket.emit('bkreq',pw);
+            });
 
             socket.on('giveall',function(res){
                 $('#password').remove();
