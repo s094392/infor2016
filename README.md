@@ -5,9 +5,10 @@ Runging on [zsisc.infor.org](zsisc.infor.org)
 
 ## Running ##
 Make sure you have [Node.js](http://nodejs.org/) and the [MongoDB](https://www.mongodb.org/) installed.
-```
+```sh
 $ git clone https://github.com/s094392/infor2016.git
 $ cd infor2016
+$ echo '{"passwd": "YOUR CONSOLE PASSWORD"}' > config.json
 $ npm install
 $ node app.js
 ```
@@ -20,10 +21,11 @@ mongo.connect('mongodb://localhost:27017/28final',function(err,db)
 
 ##Note##
 The page to view the responses is `localhost/back`, which require  password to access.
-Setting up the password in:
+Setting up the password with 'config.json'. Example:
 ```
-//app.js line 48
-if(pw==="password")
+{
+	"passwd": "YOUR CONSOLE PASSWORD"
+}
 ```
 
 ###Packages used:###

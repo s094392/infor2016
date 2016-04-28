@@ -1,3 +1,6 @@
+
+'use strict';
+
 var mongodb=require('mongodb');
 var mongo=mongodb.MongoClient;
 var express=require('express');
@@ -5,6 +8,7 @@ var app=express();
 var server=require('http').Server(app);
 var io=require('socket.io')(server);
 
+var config = require('./config.json');
 
 app.use('/assets',express.static(__dirname+'/assets'));
 app.use('/images',express.static(__dirname+'/images'));
@@ -43,7 +47,7 @@ io.sockets.on('connection',function(socket){
 		})
 	})
     socket.on('bkreq',function(pw){
-        if(pw==="zsisc7122infor"){
+        if(pw===config.passwd){
             mongo.connect('mongodb://localhost:27017/28final',function(err,db){
                 if(err){
                     throw err;
@@ -67,7 +71,9 @@ io.sockets.on('connection',function(socket){
 })
 
 //server.listen(5000);
-server.listen(8080);
+server.listen(8080, function() {
+    console.log("Server is running at http://localhost:8080");
+});
 
 
 /*
