@@ -1,0 +1,15 @@
+version: '2'
+services:
+  db:
+    image: mongo
+    container_name: infor2016-db
+    volumes:
+      - /data/zsisc:/data/db
+  web:
+    build: .
+    container_name: infor2016-web
+    depends_on:
+      - db
+
+    
+

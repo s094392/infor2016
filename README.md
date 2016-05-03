@@ -12,21 +12,22 @@ $ echo '{"passwd": "YOUR CONSOLE PASSWORD"}' > config.json
 $ npm install
 $ node app.js
 ```
-The MongoDB connection:
-```
-//app.js: line 34
-//app.js: line 49
-mongo.connect('mongodb://localhost:27017/28final',function(err,db)
-```
 
-##Note##
-The page to view the responses is `localhost/back`, which require  password to access.
-Setting up the password with 'config.json'. Example:
+##Configuration##
+Please add a ```config.json``` file in the application directory.
 ```
 {
-	"passwd": "YOUR CONSOLE PASSWORD"
+	"passwd": "YOUR CONSOLE PASSWORD",
+	"mongohost": "YOUR MONGO HOST IP"
+
 }
 ```
+
+##Docker Support##
+* You can run the node application in a [docker](http://www.docker.com/) container with the ```Dockerfile```.
+* ```docker-compose.yml``` can build a fully enviroment include [mongoDB](https://www.mongodb.org/).
+* Net ports aren't expose to host by default. You can assign it while needed.
+
 
 ###Packages used:###
 [HTML5UP](http://html5up.net/)

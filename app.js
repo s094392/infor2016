@@ -9,6 +9,11 @@ var server=require('http').Server(app);
 var io=require('socket.io')(server);
 
 var config = require('./config.json');
+var mongohost = config.mongohost || 'localhost';
+var passwd = config.passwd || 'jizz7122';
+
+console.log('mongohost: '+mongohost);
+console.log('passwd: '+passwd);
 
 app.use('/assets',express.static(__dirname+'/assets'));
 app.use('/images',express.static(__dirname+'/images'));
@@ -32,7 +37,7 @@ app.get('/back',function(req,res){
 
 io.sockets.on('connection',function(socket){
 	socket.on('sendReg',function(name,room,join,person,ps,night,locate){
-		mongo.connect('mongodb://localhost:27017/28final',function(err,db){
+		mongo.connect('mongodb://'+ mongohost +'/28final',function(err,db){
 			if(err){
 				throw err;
 			}
@@ -47,8 +52,8 @@ io.sockets.on('connection',function(socket){
 		})
 	})
     socket.on('bkreq',function(pw){
-        if(pw===config.passwd){
-            mongo.connect('mongodb://localhost:27017/28final',function(err,db){
+        if(pw===passwd){
+            mongo.connect('mongodb://'+ mongohost +':27017/28final',function(err,db){
                 if(err){
                     throw err;
                 }
