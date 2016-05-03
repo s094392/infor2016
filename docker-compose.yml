@@ -1,0 +1,17 @@
+version: '2'
+services:
+  db:
+    image: mongo
+    container_name: infor2016-db
+    volumes:
+      - /data/db:/data/db
+  web:
+    build: .
+    container_name: infor2016-web
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+    
+
