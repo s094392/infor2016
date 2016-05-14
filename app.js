@@ -42,7 +42,7 @@ io.sockets.on('connection',function(socket){
 				throw err;
 			}
             var roomn=parseInt(room);
-            if(join=="there's a bug"||roomn==0||roomn==null){
+            if(join=="there's a bug"||roomn==null){
                 socket.emit('regfailed');
             }
             else{
