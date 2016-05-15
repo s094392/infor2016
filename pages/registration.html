@@ -44,9 +44,13 @@
                             <div class="6u 12u$(xsmall)">
                                 <input type="text" name="demo-name" class="plac" id="name" value="" placeholder="社團名稱" />
                             </div>
-                            <div class="6u$ 12u$(xsmall)">
-                                <input type="email" name="demo-email" class="plac" id="room" value="" placeholder="住宿人數" />
+                            <div class="3u 6u(xsmall)">
+                                <input type="email" name="demo-email" class="plac" id="roomm" value="" placeholder="住宿人數(男)" />
                             </div>
+                            <div class="3u$ 6u$(xsmall)">
+                                <input type="email" name="demo-email" class="plac" id="roomf" value="" placeholder="住宿人數(女)" />
+                            </div>
+ 
                             <div class="6u 12u$(xsmall)">
                                 <div class="select-wrapper">
                                     <select name="demo-category" id="join">
@@ -143,7 +147,8 @@
 	window.addEventListener('load',function(){
 		document.getElementById('regist').addEventListener('click',function(){
 			var name=document.getElementById('name').value;
-			var room=document.getElementById('room').value;
+			var roomm=document.getElementById('roomm').value;
+			var roomf=document.getElementById('roomf').value;
 			var join=document.getElementById('join').value;
 			var locate=document.getElementById('locate').value;
 
@@ -199,11 +204,11 @@
 				locate="there's a bug";
 			}
 
-            if(name==""||room==""||join=="NO"||person.length==0){
+            if(name==""||roomm==""||roomf==""||join=="NO"||person.length==0){
             	able=false;
             }
 			if(able){
-				socket.emit("sendReg", name, room, join, person, ps, night, locate);
+				socket.emit("sendReg", name, roomm, roomf, join, person, ps, night, locate);
 			}
 			else{
 				sweetAlert("Oops...","看起來有空格","error");

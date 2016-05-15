@@ -36,17 +36,18 @@ app.get('/back',function(req,res){
 
 
 io.sockets.on('connection',function(socket){
-	socket.on('sendReg',function(name,room,join,person,ps,night,locate){
+	socket.on('sendReg',function(name,roomm,roomf,join,person,ps,night,locate){
 		mongo.connect('mongodb://'+ mongohost +'/28final',function(err,db){
 			if(err){
 				throw err;
 			}
-            var roomn=parseInt(room);
-            if(join=="there's a bug"||roomn==null){
+            var roommn=parseInt(roomm);
+            var roomfn=parseInt(roomf);
+            if(join=="there's a bug"||roommn==null||roomfn==null){
                 socket.emit('regfailed');
             }
             else{
-    			db.collection('reg').insert({name:name,room:room,join:join,person:person,ps:ps,night:night,locate:locate});
+    			db.collection('reg').insert({name:name,room:roomm+'/'+roomf,join:join,person:person,ps:ps,night:night,locate:locate});
                 socket.emit('done');
             }
 		})
