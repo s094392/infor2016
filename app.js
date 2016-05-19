@@ -47,7 +47,13 @@ io.sockets.on('connection',function(socket){
                 socket.emit('regfailed');
             }
             else{
-    			db.collection('reg').insert({name:name,room:roomm+'/'+roomf,join:join,person:person,ps:ps,night:night,locate:locate});
+                var obj = {name:name,room:(roomm+'/'+roomf),join:join,person:person,ps:ps,night:night,locate:locate};
+                for(var ele in obj){
+                    obj[ele]=obj[ele].replace(/&/g,"&amp;");
+                    obj[ele]=obj[ele].replace(/</g,"&lt;");
+                    obj[ele]=obj[ele].replace(/>/g,"&gt;");
+                }
+    			db.collection('reg').insert(obj);
                 socket.emit('done');
             }
 		})
