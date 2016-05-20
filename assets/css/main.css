@@ -2578,7 +2578,7 @@
 				}
 
 				.wrapper.style2 .icon.major:before {
-					color: #5052b5;
+					color: #7e9291;
 				}
 
 				.wrapper.style2-alt .icon.major:before {
@@ -4087,4 +4087,13 @@
 	}
     .hjizz{
         color: #7e9291;
+    }
+    .about-title{
+    	line-height: 0.6;
+
+    }
+    .about-subtitle{
+    	line-height: 1.4;
+    	font-size: 0.8em;
+    	opacity: 0.7;
     }
