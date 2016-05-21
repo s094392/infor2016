@@ -48,7 +48,7 @@ io.sockets.on('connection',function(socket){
             }
             else{
                 var obj = {name:name,room:(roomm+'/'+roomf),join:join,person:person,ps:ps,night:night,locate:locate};
-                for(var ele in obj){
+                /*for(var ele in obj){
                     console.log(ele);
                     if(ele==person){
                         for(var i=0;i<obj[ele].length;i++){
@@ -57,12 +57,12 @@ io.sockets.on('connection',function(socket){
                             obj[ele][i]=obj[ele][i].replace(/>/g,"&gt;");
                         }
                     }
-                    else if(ele!="night"){
+                    else if(ele!=night){
                         obj[ele]=obj[ele].replace(/&/g,"&amp;");
                         obj[ele]=obj[ele].replace(/</g,"&lt;");
                         obj[ele]=obj[ele].replace(/>/g,"&gt;");
                     }
-                }
+                }*/
     			db.collection('reg').insert(obj);
                 socket.emit('done');
             }
