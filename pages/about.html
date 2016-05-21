@@ -34,16 +34,38 @@
                 </nav>
             </header>
 
-			<div class="slider">
-			    <ul class="slides">
+			<div class="slider indexpicture">
+			    <ul class="slides indexpicture2">
 			    	<li>
-			        	<img src="images/infor29.jpg"><!-- random image -->
+			        	<img src="images/infor29.jpg" style="opacity:0.6"><!-- random image -->
+			        	<div class="caption left-align">
+							<h2 style="font-size: 2.28rem; line-height: 110%; margin:0 0 0.912rem 0;"><b>序</b></h4>
+							<p>
+								<p>鬱鬱青蔭，微風徐徐，在青春的校園裡，一群青澀的少年少女，因為懷抱著同樣的理念，聚在一起。<br><br>
+	                            他們做著不切實際的夢，朝著相同的目標前進，一路上互相扶持、互相打氣，共同度過一個又一個難關，用汗水與淚水編織無法抹滅的回憶，刻印在彼此心中。<br><br>
+	                            今天，學長姊們將社團的重擔交付在學弟妹手上。<br>
+	                            一顆耀星退隱的同時，是另一則傳說的開始。<br>
+	                            雖充滿不捨，但是時候望著學長姊的背影說再見了。<br>
+	                            或許惶恐，或許不安，但我們仍會背負著學長姊對我們的期許，乘著風，飛向夢想。<br><br>
+	                            這個重要的時刻，我們希望能與您分享<br>
+	                            在你們的見證下，完成最後的叮嚀<br>
+	                            帶著你們的祝福，展開全新的旅程<br></p>
+							</p>
+
+						</div>
 			       	</li>
 			       	<li>
-			        	<img src="images/zsisc.png">
+			        	<img src="images/zsisc.png" style="opacity:0.6">
 			        </li>
 			    </ul>
 			</div>
+			/<script>
+				$(document).ready(function(){
+					$('.slider').slider({
+						full_width: true
+					});
+				});
+			</script>
 
 
 		<!-- Wrapper -->
@@ -260,107 +282,86 @@
             <script src="assets/js/main.js"></script>
 
 
-            <style type="text/css">
-				  .slider {
-				  position: relative;
-				  height: 840px;
-				  width: 100%;
-				}
+			<style type="text/css">
+			  .slider {
+			  position: relative;
+			  height: 840px;
+			  width: 100%;
+			}
+			.slider.fullscreen {
+			  height: 100%;
+			  width: 100%;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  bottom: 0;
+			}
+			.slider.fullscreen ul.slides {
+			  height: 100%;
+			}
+			.slider.fullscreen ul.indicators {
+			  z-index: 2;
+			  bottom: 30px;
+			}
+			.slider .slides {
+			  background-color: #9e9e9e;
+			  margin: 0;
+			  height: 800px;
+			}
+			.slider .slides li {
+			  opacity: 0;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  z-index: 1;
+			  width: 100%;
+			  height: inherit;
+			  overflow: hidden;
+			}
+			.slider .slides li img {
+			  height: 100%;
+			  width: 100%;
+			  background-size: cover;
+			  background-position: center;
+			}
+			.slider .slides li .caption {
+			  color: #fff;
+			  position: absolute;
+			  top: 15%;
+			  left: 15%;
+			  width: 70%;
+			  opacity: 0;
+			}
+			.slider .slides li .caption p {
+			  color: #e0e0e0;
+			}
+			.slider .slides li.active {
+			  z-index: 2;
+			}
+			.slider .indicators {
+			  position: absolute;
+			  text-align: center;
+			  left: 0;
+			  right: 0;
+			  bottom: 0;
+			  margin: 0;
+			}
+			.slider .indicators .indicator-item {
+			  display: inline-block;
+			  position: relative;
+			  cursor: pointer;
+			  height: 16px;
+			  width: 16px;
+			  margin: 0 12px;
+			  background-color: #7899DC;
+			  transition: background-color .3s;
+			  border-radius: 50%;
+			}
+			.slider .indicators .indicator-item.active {
+			  background-color: #112D4E;
+			}
+			</style>
+	</body>
+</html
 
-				.slider.fullscreen {
-				  height: 100%;
-				  width: 100%;
-				  position: absolute;
-				  top: 0;
-				  left: 0;
-				  right: 0;
-				  bottom: 0;
-				}
-
-				.slider.fullscreen ul.slides {
-				  height: 100%;
-				}
-
-				.slider.fullscreen ul.indicators {
-				  z-index: 2;
-				  bottom: 30px;
-				}
-
-				.slider .slides {
-				  background-color: #9e9e9e;
-				  margin: 0;
-				  height: 800px;
-				}
-
-				.slider .slides li {
-				  opacity: 0;
-				  position: absolute;
-				  top: 0;
-				  left: 0;
-				  z-index: 1;
-				  width: 100%;
-				  height: inherit;
-				  overflow: hidden;
-				}
-
-				.slider .slides li img {
-				  height: 100%;
-				  width: 100%;
-				  background-size: cover;
-				  background-position: center;
-				}
-
-				.slider .slides li .caption {
-				  color: #fff;
-				  position: absolute;
-				  top: 15%;
-				  left: 15%;
-				  width: 70%;
-				  opacity: 0;
-				}
-
-				.slider .slides li .caption p {
-				  color: #e0e0e0;
-				}
-
-				.slider .slides li.active {
-				  z-index: 2;
-				}
-
-				.slider .indicators {
-				  position: absolute;
-				  text-align: center;
-				  left: 0;
-				  right: 0;
-				  bottom: 0;
-				  margin: 0;
-				}
-
-				.slider .indicators .indicator-item {
-				  display: inline-block;
-				  position: relative;
-				  cursor: pointer;
-				  height: 16px;
-				  width: 16px;
-				  margin: 0 12px;
-				  background-color: #7899DC;
-				  transition: background-color .3s;
-				  border-radius: 50%;
-				}
-
-				.slider .indicators .indicator-item.active {
-				  background-color: #112D4E;
-				}
-
-				</style>
-
-				<script>
-					$(document).ready(function(){
-					$('.slider').slider({
-					    full_width: true
-					});
-
-					});
-				</script>
-    </body>
-</html>
