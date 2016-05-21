@@ -1,4 +1,3 @@
-
 'use strict';
 
 var mongodb=require('mongodb');
@@ -76,11 +75,6 @@ io.sockets.on('connection',function(socket){
                 }
                 db.collection('reg').find({},{_id:0},function(err,res){
                     res.toArray(function(err,res){
-                        /*res=JSON.stringify(res);
-                        res=res.split("},{");
-                        res[0] = res[0].slice(2);
-                        res[res.length-1] = res[res.length-1].slice(0,res[res.length-1].length-2);
-                        for(i=0;i<res.length;i++){console.log(res[i]);}*/
                         socket.emit('giveall',res);
                     })
                 })
@@ -92,16 +86,4 @@ io.sockets.on('connection',function(socket){
     })
 })
 
-//server.listen(5000);
-server.listen(8080, function() {
-    console.log("Server is running at http://localhost:8080");
-});
-
-
-/*
-todo: person array
-
-jizz
-
-*/
-
+server.listen(8080);
