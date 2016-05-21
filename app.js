@@ -57,10 +57,12 @@ io.sockets.on('connection',function(socket){
                             obj[ele][i]=obj[ele][i].replace(/>/g,"&gt;");
                         }
                     }
-                    else if(ele!=night){
-                        obj[ele]=obj[ele].replace(/&/g,"&amp;");
-                        obj[ele]=obj[ele].replace(/</g,"&lt;");
-                        obj[ele]=obj[ele].replace(/>/g,"&gt;");
+                    else{
+                        if(ele!="night"){
+                            obj[ele]=obj[ele].replace(/&/g,"&amp;");
+                            obj[ele]=obj[ele].replace(/</g,"&lt;");
+                            obj[ele]=obj[ele].replace(/>/g,"&gt;");
+                        }
                     }
                 }
     			db.collection('reg').insert(obj);
