@@ -49,6 +49,7 @@ io.sockets.on('connection',function(socket){
             else{
                 var obj = {name:name,room:(roomm+'/'+roomf),join:join,person:person,ps:ps,night:night,locate:locate};
                 for(var ele in obj){
+                    console.log(ele)
                     if(ele==person){
                         for(var i=0;i<obj[ele].length;i++){
                             obj[ele][i]=obj[ele][i].replace(/&/g,"&amp;");
