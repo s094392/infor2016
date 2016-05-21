@@ -49,11 +49,20 @@ io.sockets.on('connection',function(socket){
             }
             else{
                 var obj = {name:name,room:(roomm+'/'+roomf),join:join,person:person,ps:ps,night:night,locate:locate};
-                /*for(var ele in obj){
-                    obj[ele]=obj[ele].replace(/&/g,"&amp;");
-                    obj[ele]=obj[ele].replace(/</g,"&lt;");
-                    obj[ele]=obj[ele].replace(/>/g,"&gt;");
-                }*/
+                for(var ele in obj){
+                    if(ele==person){
+                        for(var i=0;i<obj[ele].length;i++){
+                            obj[ele][i]=obj[ele][i].replace(/&/g,"&amp;");
+                            obj[ele][i]=obj[ele][i].replace(/</g,"&lt;");
+                            obj[ele][i]=obj[ele][i].replace(/>/g,"&gt;");
+                        }
+                    }
+                    else{
+                        obj[ele]=obj[ele].replace(/&/g,"&amp;");
+                        obj[ele]=obj[ele].replace(/</g,"&lt;");
+                        obj[ele]=obj[ele].replace(/>/g,"&gt;");
+                    }
+                }
     			db.collection('reg').insert(obj);
                 socket.emit('done');
             }
