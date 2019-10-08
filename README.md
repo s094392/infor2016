@@ -1,7 +1,7 @@
-#INFOR2016 presentation official site!#
+# INFOR2016 presentation official site! #
 
 INFOR x ZSISC
-Runging on [zsisc.infor.org](zsisc.infor.org)
+Runging on [zsisc.infor.org](https://zsisc.infor.org/2016/)
 
 ## Running ##
 Make sure you have [Node.js](http://nodejs.org/) and the [MongoDB](https://www.mongodb.org/) installed.
@@ -13,7 +13,7 @@ $ npm install
 $ node app.js
 ```
 
-##Configuration##
+## Configuration ##
 Please add a ```config.json``` file in the application directory.
 ```
 {
@@ -23,14 +23,13 @@ Please add a ```config.json``` file in the application directory.
 }
 ```
 
-##Docker Support##
+## Docker Support ##
 * You can run the node application in a [docker](http://www.docker.com/) container with the ```Dockerfile```.
 * ```docker-compose.yml``` can build a fully enviroment include [mongoDB](https://www.mongodb.org/).
 * Net ports aren't expose to host by default. You can assign it while needed.
 
 
-###Packages used:###
-[HTML5UP](http://html5up.net/)
-[sweetalert](http://t4t5.github.io/sweetalert/)
-[jParticle](http://www.htmleaf.com/jQuery/Layout-Interface/201506182060.html)
-
+### Packages Used ###
+*	[HTML5UP](http://html5up.net/)
+*	[sweetalert](http://t4t5.github.io/sweetalert/)
+*	[jParticle](http://www.htmleaf.com/jQuery/Layout-Interface/201506182060.html)
