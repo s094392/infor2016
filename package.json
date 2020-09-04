@@ -19,7 +19,7 @@
   "homepage": "https://github.com/s094392/infor2016",
   "dependencies": {
     "express": "^4.13.4",
-    "mongodb": "^2.1.16",
+    "mongodb": "^3.6.1",
     "socket.io": "^1.4.5",
     "sweetalert": "^1.1.3"
   },
